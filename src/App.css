@@ -1,38 +1,598 @@
-.App {
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  background: linear-gradient(135deg, #3b006a, #7a00ff);
+  color: white;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffccff;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.btn {
+  background: white;
+  color: #7a00ff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffccff;
+  color: #3b006a;
+}
+
+.projects {
+  text-align: center;
+  padding: 60px 30px;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+/* --- Scroll Animation Effects --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+/* --- How It Works Section --- */
+.how-it-works {
+  text-align: center;
+  padding: 70px 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  margin: 60px 40px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px 15px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #ffccff;
+}
+
+.step p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+html {
+  scroll-behavior: smooth;
+}
+/* --- About Us Section --- */
+.about {
+  text-align: center;
+  padding: 80px 30px;
+  margin: 60px 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #f8f8f8;
+  opacity: 0.9;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+}
+.booking-page {
+  background: linear-gradient(135deg, #3b006a, #7a00ff);
+  color: white;
+  min-height: 100vh;
+  padding: 60px 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.plan-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.plan-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.plan-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(255, 204, 255, 0.4);
+}
+
+.plan-card.selected {
+  border: 2px solid #ffccff;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 204, 255, 0.6);
+}
+
+.price-tag {
+  font-weight: 700;
+  margin-top: 8px;
+  color: #ffccff;
+}
+
+.cart-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 25px;
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.addon-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+.btn, .book-btn {
+  background: #ffccff;
+  color: #3b006a;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover, .book-btn:hover {
+  background: white;
+  color: #3b006a;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.95);
+  color: #3b006a;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  font-weight: 600;
+  z-index: 1000;
+  animation: fadePopup 0.3s ease;
+}
+
+@keyframes fadePopup {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Popup inner content and form styles for booking flow */
+.popup .popup-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  color: #3b006a;
+}
+
+.popup .popup-content input[type="text"],
+.popup .popup-content input[type="email"],
+.popup .popup-content input[type="tel"],
+.popup .popup-content input[type="date"],
+.popup .popup-content input[type="time"] {
+  width: 260px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.12);
+  outline: none;
+}
+
+.confirm-btn, .close-btn {
+  background: #ffccff;
+  color: #3b006a;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.confirm-btn:hover, .close-btn:hover {
+  background: white;
+}
+
+.popup .popup-content.confirm {
+  text-align: left;
+}
+
+.shooter-info {
+  margin-top: 12px;
+  background: rgba(255, 204, 255, 0.06);
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, #f3f3f3, #e9e9e9);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  margin: 8px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.map-placeholder .pulse {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff66cc;
+  box-shadow: 0 0 0 rgba(255,102,204,0.7);
+  animation: pulse 1.5s infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,102,204,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255,102,204,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,102,204,0); }
 }
+
+.tracking-text {
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: #444;
+}
+
+/* Emphasize popup text and prioritize content */
+.popup .popup-content h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #6a0080;
+  text-align: center;
+}
+
+.popup .popup-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #3b006a;
+  text-align: center;
+  margin: 4px 0;
+}
+
+/* Make the confirmation block text align center and slightly larger */
+.popup .popup-content.confirm p {
+  text-align: center;
+  font-size: 1.12rem;
+}
+
+.live-link {
+  display: inline-block;
+  background: #00f2a6;
+  color: #00331a;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.live-link:hover {
+  filter: brightness(0.95);
+}
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 16px;
+  color: #fff;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,255,128,0.3);
+  animation: slideUp 0.4s ease;
+}
+
+/* Ensure popup content is positioned for absolute child (close button) */
+.popup-content { position: relative; }
+
+/* Close icon in top-right of popup */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 8px;
+}
+.popup-close:hover { background: rgba(255,255,255,0.06); }
+
+/* Force high-contrast text colors for popup readability */
+.popup-content,
+.popup-content h3,
+.popup-content p,
+.popup-content .tracking-text,
+.popup-content .shooter-info,
+.popup-content input,
+.popup-content .confirm p {
+  color: #ffffff !important;
+}
+
+.popup-content .shooter-info {
+  background: rgba(255,255,255,0.04);
+  color: #f1f1f1 !important;
+}
+
+.popup-content input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* Make date/time (and other) inputs clearly visible on dark popup */
+.popup-content input[type="date"],
+.popup-content input[type="time"],
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content input[type="tel"] {
+  background: #eef6ff; /* light background like other fields */
+  color: #08121a !important; /* dark text for readability */
+}
+
+/* Webkit-specific inner text for date/time inputs */
+.popup-content input[type="date"]::-webkit-datetime-edit,
+.popup-content input[type="time"]::-webkit-datetime-edit,
+.popup-content input[type="date"]::-webkit-datetime-edit-text,
+.popup-content input[type="date"]::-webkit-datetime-edit-year-field,
+.popup-content input[type="date"]::-webkit-datetime-edit-month-field,
+.popup-content input[type="time"]::-webkit-datetime-edit-hour-field,
+.popup-content input[type="time"]::-webkit-datetime-edit-minute-field {
+  color: #08121a !important;
+}
+
+/* Placeholder color (if used) */
+.popup-content input::placeholder {
+  color: rgba(8,18,26,0.6);
+}
+
+.confirm-btn, .close-btn {
+  margin-top: 10px;
+  background: #00ff9d;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.confirm-btn:hover, .close-btn:hover {
+  background: #00cc7b;
+}
+
+.map-placeholder {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: url("https://i.imgur.com/8x1iK0v.png") center/cover no-repeat;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.pulse {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #00ff9d;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+.tracking-text {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Recent booking floating widget on Home */
+.recent-booking-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(180deg, #1f1f1f, #151515);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 1100;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 260px;
+}
+.recent-booking-widget .rb-line { font-size: 0.95rem; opacity: 0.95; margin-top: 4px; }
+.recent-booking-widget .rb-actions { display:flex; gap:8px; flex-direction: column; }
+.recent-booking-widget .btn { padding: 8px 12px; border-radius: 10px; font-weight:600; }
+

@@ -1,0 +1,81 @@
+ .booking-page {
+  background: linear-gradient(135deg, #3b006a, #7a00ff);
+  color: white;
+  min-height: 100vh;
+  padding: 60px 30px;
+}
+
+.booking-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.plan-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.plan-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.plan-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+.plan-card.selected {
+  border: 2px solid #ffccff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.cart-box {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.book-btn {
+  background: #ffccff;
+  color: #3b006a;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.book-btn:hover {
+  background: white;
+}
+
+.btn {
+  background: #ffccff;
+  color: #3b006a;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
